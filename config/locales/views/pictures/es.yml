@@ -1,0 +1,7 @@
+es:
+  image_dimensions: Las dimensiones de la imagen (pixels)
+  image_type:       Tipo de imagen
+  pictures:         Imagens
+  picture:          Imagen
+  new_picture:      Nuevo imagen
+  listing_pictures: La lista de imagens

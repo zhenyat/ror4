@@ -1,0 +1,32 @@
+<h1><%= t :listing_pictures %></h1>
+
+<table>
+  <thead>
+    <tr>
+      <th class="index"><%= t :picture %></th>
+      <th class="index"><%= t :filename %></th>
+      <th class="index"><%= t :title %></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @pictures.each do |picture| %>
+      <% size = thumb_size picture.filename %>
+      <tr>
+        <td><%= image_tag "pictures/#{picture.filename}", width: "#{size.first}", height: "#{size.last}" %></td>
+        <td><%= picture.filename %></td>
+        <td><%= picture.title %></td>
+        <td><%= link_to image_tag('buttons/show.png',   alt: 'show',    title: t(:show)),    picture_url(id: picture) %></td>
+        <td><%= link_to image_tag('buttons/edit.png',   alt: 'edit',    title: t(:edit)),    edit_picture_url(id: picture) %></td>
+        <td><%= link_to image_tag('buttons/delete.png', alt: 'destroy', title: t(:destroy)), picture_url(id: picture), method: :delete, data: {confirm: t(:sure_message)} %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+<%= link_to t(:new_picture), new_picture_path %>
+

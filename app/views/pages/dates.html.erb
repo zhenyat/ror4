@@ -1,0 +1,132 @@
+<h1><%= t :dates_page %> </h1>
+
+<p>
+  <%= link_to (t :comments), "/#{I18n.locale}/zt_i18n_cmt" %>
+</p>
+
+<p><%= t(:localization) + ": " + t(:locale_language)%></p>
+
+<h3><%= t :defaults %></h3>
+<table border="1">
+  <tr>
+    <th width="300"><%= t :parameter %></th>
+    <th width="400"><%= t :value %></th>
+    <th width="400"><%= t :locale_value %></th>
+  </tr>
+  <tr>
+    <td>Current time (<strong>default</strong>)</td>    <td><%= @time %></td> <td><%= l @time %></td>
+  </tr>
+  <tr>
+    <td>locale format <strong>short</strong> </td>      <td></td><td><%= l @time, format: :short %></td>
+  </tr>
+  <tr>
+    <td>locale format <strong>long</strong> </td>       <td></td><td><%= l @time, format: :long %></td>
+  </tr>
+  <tr>
+    <td>locale format <strong>full</strong> </td>       <td></td><td><%= l @time, format: :full %></td>
+  </tr>
+  <tr>
+    <td>locale format <strong>short_date</strong> </td> <td></td><td><%= l @time, format: :short_date %></td>
+  </tr>
+  <tr>
+    <td>locale format <strong>long_date</strong> </td>  <td></td><td><%= l @time, format: :long_date %></td>
+  </tr>
+  <tr>
+    <td>locale format <strong>short_time</strong> </td> <td></td><td><%= l @time, format: :short_time %></td>
+  </tr>
+  <tr>
+    <td>locale format <strong>long_time</strong> </td>  <td></td><td><%= l @time, format: :long_time %></td>
+  </tr>
+</table>
+<br>
+<h3><%= t :formatting %> </h3>
+<table border="1">
+  <tr>
+    <th width="500"><%= t :format %></th>
+    <th width="300"><%= t :strftime_value %></th>
+    <th width="300"><%= t :format_value %></th>
+  </tr>
+  <tr>
+    <td><strong>%d.%m.%Y</strong> </td>
+    <td><%=  @time.strftime   "%d.%m.%Y"  %></td>
+    <td><%=  l @time, format: '%d.%m.%Y' %></td>
+  </tr>
+  <tr>
+    <td><strong>%d %B %Y</strong> </td>
+    <td><%=  @time.strftime   "%d %B %Y"  %></td>
+    <td><%=  l @time, format: '%d %B %Y' %></td>
+  </tr>
+  <tr>
+    <td><strong>%c</strong> </td>
+    <td><%=  @time.strftime   "%c"  %></td>
+    <td><%=  l @time, format: '%c' %></td>
+  </tr>
+  <tr>
+    <td><strong>%H:%M:%S</strong> </td>
+    <td><%=  @time.strftime   "%H:%M:%S"  %></td>
+    <td><%=  l @time, format: '%H:%M:%S'  %></td>
+  </tr>
+  <tr>
+    <td><strong>%a</strong> - abbreviated weekday name</td>
+    <td><%=  @time.strftime   "%a"  %></td>
+    <td><%=  l @time, format: '%a'  %></td>
+  </tr>
+  <tr>
+    <td><strong>%A</strong> - full weekday name</td>
+    <td><%=  @time.strftime   "%A" %></td>
+    <td><%=  l @time, format: '%A'  %></td>
+  </tr>
+  <tr>
+    <td><strong>%b</strong> - abbreviated month name</td>
+    <td><%=  @time.strftime   "%b"  %></td>
+    <td><%=  l @time, format: '%b'  %></td>
+  </tr>
+  <tr>
+    <td><strong>%y</strong> - Year without a century (00 to 99)</td>
+    <td><%=  @time.strftime   "%y"  %></td>
+    <td><%=  l @time, format: '%y'  %></td>
+  </tr>
+  <tr>
+    <td><strong>%I</strong> - Hour of the day, 12-hour clock (01 to 12) </td>
+    <td><%=  @time.strftime   "%I"  %></td>
+    <td><%=  l @time, format: '%I'  %></td>
+  </tr>
+  <tr>
+    <td><strong>%p</strong> - Meridian indicator (AM or PM)</td>
+    <td><%=  @time.strftime   "%p"  %></td>
+    <td><%=  l @time, format: '%p'  %></td>
+  </tr>
+  <tr>
+    <td><strong>%x</strong> - Preferred representation for the date alone, no time</td>
+    <td><%=  @time.strftime   "%x"  %></td>
+    <td><%=  l @time, format: '%x'  %></td>
+  </tr>
+  <tr>
+    <td><strong>%X</strong> - Preferred representation for the time alone, no date</td>
+    <td><%=  @time.strftime   "%X"  %></td>
+    <td><%=  l @time, format: '%X'  %></td>
+    <tr>
+    <td><strong>%Z</strong> - Time zone name</td>
+    <td><%=  @time.strftime   "%Z" %></td>
+    <td><%=  l @time, format: '%Z'  %></td>
+  </tr>
+  </tr>
+</table>
+
+<h3>ZT <%= t :methods %></h3>
+<p><%= "#{t :short_date}:       #{zt_date @time,     "short"}" %></p>
+<p><%= "#{t :long_date}:        #{zt_date @time,     "long" }" %></p>
+<p><%= "#{t :default_date}:     #{zt_date @time             }" %></p>
+<p><%= "#{t :short_time}:       #{zt_time @time,     "short"}" %></p>
+<p><%= "#{t :long_time}:        #{zt_time @time,     "long" }" %></p>
+<p><%= "#{t :default_time}:     #{zt_time @time             }" %></p>
+<p><%= "#{t :short_datetime}:   #{zt_datetime @time, "short"}" %></p>
+<p><%= "#{t :long_datetime}:    #{zt_datetime @time, "long" }" %></p>
+<p><%= "#{t :full_datetime}:    #{zt_datetime @time, "full" }" %></p>
+<p><%= "#{t :default_datetime}: #{zt_datetime @time         }" %></p>
+<p><%= "#{t :timestamp}:        #{zt_ts }" %></p>
+
+<h3>ZT <%= t :dates_interval %></h3>
+<p>['2013-11-09' - '2013-11-25']:        <strong><%= zt_dates_interval(Time.parse("2013-11-09"), Time.parse("2013-11-25")) %></strong></p>
+<p>['2013-11-21' - Date.new(2013,12,9)]: <strong><%= zt_dates_interval(Time.parse("2013-11-21"), Date.new(2013,12,9)) %></strong></p>
+<p>[Date.new(2099,01,29) - Time.now]:    <strong><%= zt_dates_interval(Date.new(2099,01,29), Time.now) %></strong></p>

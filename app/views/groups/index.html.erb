@@ -1,0 +1,36 @@
+<p>
+  <%= link_to (t :comments), "/#{I18n.locale}/zt_group_cmt" %>
+</p>
+
+<h1><%= t :listing_groups %></h1>
+
+<table>
+  <thead>
+    <tr>
+      <th><%= t :name %></th>
+      <th><%= t :title %></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @groups.each do |group| %>
+      <tr>
+        <td><%= group.name %></td>
+        <td><%= group.title %></td>
+        <td><%= link_to image_tag('buttons/show.png',   alt: 'show',    title: t(:show)),    group_url(id: group) %></td>
+        <td><%= link_to image_tag('buttons/edit.png',   alt: 'edit',    title: t(:edit)),    edit_group_url(id: group) %></td>
+        <td><%= link_to image_tag('buttons/delete.png', alt: 'destroy', title: t(:destroy)), group_url(id: group), method: :delete, data: {confirm: t(:sure_message)} %></td>
+
+        <%# Text buttons are obsolete here (replaced with images)%>
+        <!--td><%#= link_to t(:show),    group_url(id: group) %></td==>
+        <!--td><%#= link_to t(:edit),    edit_group_url(id: group) %></td-->
+        <!--td><%#= link_to t(:destroy), group_url(id: group), method: :delete, data: { confirm: t(:sure_message) } %></td-->
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+<br>
+<%= link_to t(:new_group), new_group_path %>

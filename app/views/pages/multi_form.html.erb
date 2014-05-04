@@ -1,0 +1,25 @@
+<h1>Multi-Form Page</h1>
+<h3>Set a Year low limit</h3>
+<%= form_for :year, url: {controller: "pages", action: "update_year"}, html: {id: 'update_year_form'} do |f| %>
+  <% if session[:year_limit].nil? %>
+    <%= f.text_field :limit %>
+  <% else %>
+    <%= f.text_field :limit, value: session[:year_limit] %>
+  <% end %>
+  <%= f.submit 'Изменить'%>
+<% end %>
+
+<h3>Select a Year</h3>
+<%= form_for :year, url: {controller: "pages", action: "show_year"}, html: {id: "show_year_form"} do |f| %>
+  <% if session[:year_limit].nil? %>
+    <%= select_tag :year, options_for_select(2000..Time.now.year) %>
+  <% else %>
+    <%= select_tag :year, options_for_select(session[:year_limit].to_i..Time.now.year) %>
+  <% end %>
+    <%= f.submit 'Выбрать'%>
+<% end %>
+
+<br>
+<strong>
+  Selected year: <%= session[:year_selected] unless session[:year_selected].nil? %>
+</strong>

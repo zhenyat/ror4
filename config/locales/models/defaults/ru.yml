@@ -1,0 +1,14 @@
+ru:
+  activerecord:
+    models:
+      group:      Группа
+      picture:    Картинка
+    attributes:
+    successful:
+      messages:
+        created:  'Объект %{model} успешно создан'
+        updated:  'Объект %{model} успешно изменен'
+        uploaded:  Файл успешно загружен
+    handling:
+      editing:    '%{model}: редактировать'
+      new:        '%{model}: создать'

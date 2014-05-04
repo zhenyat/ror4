@@ -1,0 +1,18 @@
+# Don't forget to concatenate "_page" to any page title
+en:
+  companies:          Companies
+  debug_page:         Debugging
+  dates_page:         Date & Time
+  groups_page:        Groups
+  home_page:          Home
+  init_page:          Initialization
+  key:                Key
+  multi_form_page:    Multi-Form
+  net_http_page:      HTTP Requests
+  pictures_page:      Pictures
+  sf_sample_page:     Superfish Sample
+  timestamp:          Timestamp
+  yaml_files_page:    YAML-files
+  zt_group_cmt_page:  ZT Comments
+  zt_i18n_cmt_page:   ZT Comments
+  zt_mailer_page:     Mailer

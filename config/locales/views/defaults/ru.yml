@@ -1,0 +1,16 @@
+ru:
+  back:          Назад
+  created_at:    Создан
+  destroy:       Удалить
+  edit:          Редактировать
+  filename:      Имя файла
+  header_title:  Приложение на Ruby on Rails 4
+  hello:         Добро пожаловать!
+  language:      Русский
+  last:          Последний
+  name:          Имя
+  show:          Показать
+  sure_message:  Вы уверены?
+  title:         Название
+  versions:      Версии
+  upload_more:   Загрузить еще

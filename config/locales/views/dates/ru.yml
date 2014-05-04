@@ -1,0 +1,25 @@
+ru:
+  comments:         Комментарии
+  dates_interval:   Интервал между датами
+  defaults:         По умолчанию
+  default_date:     Дата по умолчанию
+  default_datetime: Дата и время по умолчанию
+  default_time:     Время по умолчанию
+  format:           Формат
+  formatting:       Форматирование даты и времени
+  format_value:     "'locale format' значение"
+  full_datetime:    Полные дата и время
+  here:             здесь
+  locale_language:  русская
+  locale_value:     Locale значение
+  localization:     Локализация
+  long_date:        Длинная дата
+  long_datetime:    Длинные дата и время
+  long_time:        Длинное время
+  methods:          Методы
+  parameter:        Параметр
+  short_date:       Краткая дата
+  short_datetime:   Краткие дата и время
+  short_time:       Краткое время
+  strftime_value:   "'strftime' значение"
+  value:            Значение

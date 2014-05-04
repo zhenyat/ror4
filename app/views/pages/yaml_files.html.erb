@@ -1,0 +1,41 @@
+<h3>Sample of data from YAML file</h3>
+
+<h3>ZT_CONFIG Dump</h3>
+  <table border="1">
+    <tr><th class='zt_th'><%= t :key %></th><th><%= t :value %></th></tr>
+
+    <% ZT_CONFIG.each do |key, value| %>
+      <tr><td><strong><%= key %></strong></td><td><%= debug value %></td></tr>
+    <% end %>
+  </table>
+
+<h3>Companies</h3>
+<table border="1">
+  <tr>
+    <th class='zt_th'><%= t :name %></th>
+    <th><%= t :foundation_date %></th>
+    <th><%= t :address %></th>
+    <th><%= t :phone %></th>
+    <th><%= t :email %></th>
+  </tr>
+    <% @companies.each do |company, details| %>
+      <tr>
+        <td><strong><%= details['name'] %></strong></td>
+        <td><%= "#{details['established']}" %></td>
+        <td><%= "#{details['contacts']['adr']}" %></td>
+        <td><%= "#{details['contacts']['phone']}" %></td>
+        <td><%= "#{details['contacts']['email']}" %></td>
+      </tr>
+    <% end %>
+</table>
+
+  <h3>ZT Constants</h3>
+  <table border="1">
+    <tr>
+      <th class='zt_th'><%= t :constant %></th>
+      <th><%= t :value %></th>
+    <tr><td><strong>ZT_CONSTANT_DATE</strong></td> <td><%= ZT_CONSTANT_DATE %></td></tr>
+    <tr><td><strong>ZT_CONTSTANT_MAIL</strong></td> <td><%= ZT_CONTSTANT_MAIL %></td></tr>
+    </tr>
+  </table>
+

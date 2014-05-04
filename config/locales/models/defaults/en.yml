@@ -1,0 +1,14 @@
+en:
+  activerecord:
+    models:
+      picture:    Picture
+      group:      Group
+    attributes:
+    successful:
+      messages:
+        created:   '%{model} was successfully created'
+        updated:   '%{model} was successfully updated'
+        uploaded:  File was successfully uploaded
+    handling:
+      editing:    'Editing  %{model}'
+      new:        'New %{model}'

@@ -1,0 +1,16 @@
+es:
+  companies:          Compañías
+  debug_page:         La depuración
+  dates_page:         Fecha y hora
+  home_page:          Casero
+  init_page:          Inicialización
+  key:                Clave
+  net_http_page:      HTTP demandas
+  multi_form_page:    Multi-Form
+  pictures_page:      Imagens
+  sf_sample_page:     Superfish ejemplo
+  timestamp:          Marca de tiempo
+  yaml_files_page:    YAML-archivos
+  zt_group_cmt_page:  ZT comentarios
+  zt_i18n_cmt_page:   ZT comentarios
+  zt_mailer_page:     Mailer

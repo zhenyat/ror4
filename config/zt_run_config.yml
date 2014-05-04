@@ -1,0 +1,23 @@
+################################################################################
+# zt_run_config.yml:
+#   Contains config options for the Application Run:
+#     corresponding default values to be updated
+#
+#   Loaded in:  ./initializers/zt_load_config.rb
+#
+#   10.03.2014  ZT
+################################################################################
+
+companies:
+  Company1:
+    name:   Газпром
+
+mail:
+  mail_to:  etelyukov@bkc.ru
+
+pictures:
+    size:
+    - 0.
+    - 100.
+
+new_flag:  Enabled

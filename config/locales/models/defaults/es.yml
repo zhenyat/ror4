@@ -1,0 +1,15 @@
+es:
+  activerecord:
+    models:
+      picture:    Imagen
+      group:      Grupo
+    attributes:
+    successful:
+      messages:
+        created:  '%{model} se ha creado correctamente'
+        updated:  '%{model} ha sido modificada con éxito'
+        uploaded: Fichero se ha cargado correctamente
+    handling:
+      editing:    'Editar  %{model}'
+      new:        'Nuevo  %{model}'
+

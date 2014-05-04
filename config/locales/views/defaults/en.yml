@@ -1,0 +1,15 @@
+en:
+  edit:         Edit
+  created_at:   Created at
+  destroy:      Delete
+  filename:     Filename
+  header_title: Ruby on Rails 4 Application
+  hello:        Welcome!
+  language:     English
+  last:         Last
+  name:         Name
+  show:         Show
+  sure_message: Are you sure?
+  title:        Title
+  versions:     Versions
+  upload_more:  Upload more

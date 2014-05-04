@@ -1,0 +1,27 @@
+<%= form_for(@picture, url: picture_path(id: @picture), action: "upload") do |f| %>
+
+<%#= form_for(@picture, url: (@picture.id.nil? ? {action: "upload"} : {picture_path(id: @picture) action: "update"}), html: {multipart: true }) do |f| %>
+<%#= form_for(@picture, url: {action: :upload}, html: {multipart: true }) do |f| -%>
+
+  <% if @picture.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@picture.errors.count, "error") %> prohibited this picture from being saved:</h2>
+      <ul>
+      <% @picture.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.hidden_field :id %>
+    <%= f.file_field :picture_file %>
+  </div>
+  <div class="field">
+    <%= f.label t(:title) %><%= f.text_field :title %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

@@ -1,0 +1,48 @@
+<h2>Debugging Tools</h2>
+<p><a href="http://guides.rubyonrails.org/debugging_rails_applications.html">Source</a></p>
+<section>
+  <h3>1. Helpers</h3>
+  <p>Three methods to inspect a variable contents</p>
+  <dl>
+    <dt>debug</dt>
+    <dd>Code: "debug @groups"</dd>
+    <%= debug @groups %>
+
+    <dt>to_yml<dt>
+    <dd>Code: simple_format @groups.first.to_yaml</dd>
+    <%= simple_format @groups.first.to_yaml %>
+    <%= "Localized created_at: " + I18n.l(@groups.first.created_at) + "\n\n" %>
+    <br><br>
+    <dt>inspect</dt>
+    <dd>Code: @groups.inspect</dd>
+    <%= @groups.inspect %>
+  </dl>
+</section>
+
+<section>
+  <h3>2. zt_log Method</h3>
+  <p>Log file 'zt.log' is created in 'zt_settings.rb'<br></p>
+</section
+
+<section>
+  <h3>3. The Logger</h3>
+  <p>To save information to log-files at runtime<br>
+    Default file-name: <strong>Rails.root/log/environment_name.log</strong><br>
+    Log levels: <strong>:debug</strong> (0)
+                <strong>:info</strong> (1)
+                <strong>:warn</strong> (2)
+                <strong>:error</strong> (3)
+                <strong>:fatal</strong> (4)
+                <strong>:unknown</strong> (5)
+                <br>
+    Default log level: <%= ActiveRecord::Base.logger.level %>
+  </p>
+</section>
+
+<section>
+  <h3>4. debugger gem</h3>
+</section>
+
+<section>
+  <h3>5. Debugging Memory Leaks</h3>
+</section>

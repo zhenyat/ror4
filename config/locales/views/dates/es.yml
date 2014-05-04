@@ -1,0 +1,24 @@
+es:
+  comments:         Comentarios
+  dates_interval:   Intervalo entre fechas
+  default_date:     Fecha por defecto
+  default_time:     Hora por defecto
+  default_datetime: FechaHora por defecto
+  defaults:         Opción por defecto
+  format:           Formato
+  formatting:       Formateo de datos
+  format_value:     Valor de formato de locale
+  full_datetime:    Completa la fecha y la hora
+  locale_language:  Español
+  locale_value:     Valor de locale
+  localization:     Localización
+  long_date:        Fecha extensa
+  long_time:        Hora extensa
+  long_datetime:    FechaHora extensa
+  methods:          Métodos
+  parameter:        Parámetro
+  short_date:       Fecha abreviada
+  short_time:       Hora abreviada
+  short_datetime:   FechaHora abreviada
+  strftime_value:   Valor 'strftime'
+  value:            Valor

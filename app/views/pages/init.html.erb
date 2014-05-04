@@ -1,0 +1,52 @@
+<h2>Initialization Phase</h2>
+<p><a href="http://guides.rubyonrails.org/initialization.html">Source</a></p>
+<section>
+  <p>To learn RoR initialization process</p>
+
+  <h3>Object ENV</h3>
+  <table border="1">
+    <tr><th class='zt_th'><%= t :parameter %></th><th><%= t :value %></th></tr>
+
+    <% ENV.sort.each do |key, value| %>
+      <tr><td>ENV['<strong><%= key %></strong>']</td><td><%= value %></td></tr>
+    <% end %>
+  </table>
+
+  <h3>Constants</h3>
+  <table border="1">
+    <tr>
+      <th class='zt_th'><%= t :constant %></th>
+      <th><%= t :value %></th>
+    <tr><td><strong>APP_PATH</strong> (set sin bin/rails)</td> <td><%= APP_PATH %></td></tr>
+    <tr><td><strong>__FILE__</strong></td> <td><%= __FILE__ %></td></tr>
+    </tr>
+  </table>
+
+  <h3>Rails Module (some parameters)</h3>
+  <table border="1">
+    <tr>
+      <th class='zt_th'><%= t :parameter %></th>
+      <th><%= t :value %></th>
+    </tr>
+    <tr><td><strong>Rails.class</strong></td>                         <td><%= Rails.class %></td></tr>
+    <tr><td><strong>Rails.version</strong></td>                       <td><%= Rails.version %></td></tr>
+    <tr><td><strong>Rails.application.class</strong></td>             <td><%= Rails.application.class %></td></tr>
+    <tr><td><strong>Rails.application.root</strong></td>              <td><%= Rails.application.root %></td></tr>
+    <r><td><strong>Rails.application.instance_variables</strong></td> <td><%= Rails.application.instance_variables %></td></tr>
+    <tr><td><strong>Rails.env</strong></td>                           <td><%= Rails.env %></td></tr>
+    <tr><td><strong>Rails.logger.class</strong></td>                  <td><%= Rails.logger.class %></td></tr>
+    <tr><td><strong>Rails.logger.formatter</strong></td>              <td><%= Rails.logger.formatter %></td></tr>
+    <tr><td><strong>Rails.logger.progname</strong></td>               <td><%= Rails.logger.progname %></td></tr>
+  </table>
+
+  <h4>Rails Module - more detail: Rails.application.instance_variables</h4>
+  <table border="1">
+    <tr>
+      <th class='zt_th'><%= t :parameter %></th>
+      <th><%= t :value %></th>
+    </tr>
+    <% Rails.application.instance_variables.each do |var| %>
+      <tr><td><strong><%= var %> </strong></td> <td><%= Rails.application.instance_variable_get(var)  %></td></tr>
+    <% end %>
+  </table>
+</section>

@@ -1,0 +1,48 @@
+<%#
+  ##############################################################################
+  # jQuery Superfish Examples
+  #
+  #   Version:  1.7.4
+  #
+  #   Sources:
+  #     download:   http://plugins.jquery.com/superfish/
+  #     examples:   http://users.tpg.com.au/j_birch/plugins/superfish/examples/
+  #                 http://users.tpg.com.au/j_birch/plugins/superfish/example.html
+  #
+  ##############################################################################
+%>
+<h1>jQuery Superfish Examples  (v. 1.7.4)</h1>
+
+<p><a href="http://users.tpg.com.au/j_birch/plugins/superfish/example.html">Examples Source</a></p>
+<aside class="top_menu">
+  <%= render  'chunks/top_menu' %>
+</aside>
+<aside class="left_menu">
+  <h1>Catalog</h1>
+
+  <ul class="sf-menu sf-vertical">
+    <% @sections.each do |section| %>
+      <li>
+        <a href="#"><%= section.name %></a>
+        <ul>
+          <% @categories.each do |category| %>
+            <% if category.section_id == section.id %>
+              <li>
+                <a href="#"><%= category.name %></a>
+                <ul>
+                  <% @products.each do |product| %>
+                    <% if product.category_id == category.id %>
+                      <li>
+                        <%= link_to product.name, product_path(id: product) %>
+                      </li>
+                    <% end %>
+                  <% end %>     <%# Product cycle end %>
+                </ul>
+              </li>
+            <% end %>
+          <% end %>             <%# Category cycle end %>
+        </ul>
+      </li>
+    <% end %>                   <%# Section cycle end %>
+  </ul>
+</aside>

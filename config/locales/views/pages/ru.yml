@@ -1,0 +1,16 @@
+ru:
+  companies:          Компании
+  debug_page:         Отладка
+  dates_page:         Дата и время
+  home_page:          Главная
+  init_page:          Инициализация
+  key:                Ключ
+  net_http_page:      HTTP запросы
+  multi_form_page:    Много форм
+  pictures_page:      Картинки
+  sf_sample_page:     Пример Superfish
+  timestamp:          Временная метка
+  yaml_files_page:    YAML-файлы
+  zt_group_cmt_page:  ZT комментарии
+  zt_i18n_cmt_page:   ZT комментарии
+  zt_mailer_page:     Mailer

@@ -1,0 +1,15 @@
+<h1>ZT: I18n Implementation for ActiveRecord</h1>
+<section class="zt_comment">
+    <article>
+        <header>
+            <h3>Update of partial <strong>_form.html.erb</strong></h3>
+        </header>
+        <div>
+          Calling of the Helper <strong>form_for</strong> must be updated.<br>
+          to replace code:
+        <pre>form_for @group do |f|</pre>
+          with:
+          <pre>form_for @group, url: (@group.id.nil? ? groups_path : group_path(id: @group)) do |f|</pre>
+        </div>
+    </article>
+</section>

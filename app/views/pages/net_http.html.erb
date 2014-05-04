@@ -1,0 +1,55 @@
+<h1>Class ActionDispatch::Request < Rack:Request</h1>
+
+<p><a href="http://api.rubyonrails.org/classes/ActionDispatch/Request.html#method-i-original_url">Reference</a></p>
+
+<h3>Request Methods</h3>
+<table border="1">
+  <tr><th width="300">Method</th>                   <th width="500">Value</th></tr>
+  <tr><td>request.GET()</td>                        <td><%= request.GET %></td></tr>
+  <tr><td>request.POST()</td>                       <td><%= request.POST %></td></tr>
+  <tr><td>request.authorization()</td>              <td><%= request.authorization %></td></tr>
+  <tr><td>request.body()</td>                       <td><%= request.body %></td></tr>
+  <tr><td>request.content_length()</td>             <td><%= request.content_length %></td></tr>
+  <tr><td>request.cookie_jar()</td>                 <td><%= request.cookie_jar %></td></tr>
+  <tr><td>request.deep_munge(hash)</td>             <td><%= "argument is required" %></td></tr>
+  <tr><td>request.delete?()</td>                    <td><%= request.delete? %></td></tr>
+  <tr><td>request.flash()</td>                      <td><%= request.flash %></td></tr>
+  <tr><td>request.form_data?()</td>                 <td><%= request.form_data? %></td></tr>
+  <tr><td>request.format</td>                       <td><%= request.format %></td></tr>
+  <tr><td>request.fullpath()</td>                   <td><%= request.fullpath %></td></tr>
+  <tr><td>request.get?()</td>                       <td><%= request.get? %></td></tr>
+  <tr><td>request.head?()</td>                      <td><%= request.head? %></td></tr>
+  <tr><td>request.headers()</td>                    <td><%= request.headers %></td></tr>
+  <tr><td>request.ip()</td>                         <td><%= request.ip %></td></tr>
+  <tr><td>request.key?(key)</td>                    <td><%= "argument is required" %></td></tr>
+  <tr><td>request.local?()</td>                     <td><%= request.local? %></td></tr>
+  <tr><td>request.media_type()</td>                 <td><%= request.media_type %></td></tr>
+  <tr><td>request.method()</td>                     <td><%= request.method %></td></tr>
+  <tr><td>request.method_symbol()</td>              <td><%= request.method_symbol %></td></tr>
+  <tr><td>request.original_fullpath()</td>          <td><%= request.original_fullpath %></td></tr>
+  <tr><td>request.original_url()</td>               <td><%= request.original_url %></td></tr>
+  <tr><td>request.patch?()</td>                     <td><%= request.patch? %></td></tr>
+  <tr><td>request.post?()</td>                      <td><%= request.post? %></td></tr>
+  <tr><td>request.put?()()</td>                     <td><%= request.put?() %></td></tr>
+  <tr><td>request.query_parameters()</td>           <td><%= request.query_parameters %></td></tr>
+  <tr><td>request.raw_post()</td>                   <td><%= request.raw_post %></td></tr>
+  <tr><td>request.remote_ip()</td>                  <td><%= request.remote_ip %></td></tr>
+
+  <tr><td>request.request_method()</td>             <td><%= request.request_method %></td></tr>
+  <tr><td>request.request_method_symbol()</td>      <td><%= request.request_method_symbol %></td></tr>
+  <tr><td>request.request_parameters()</td>         <td><%= request.request_parameters %></td></tr>
+  <tr><td>request.reset_session()</td>              <td><%= request.reset_session %></td></tr>
+
+  <tr><td>request.server_software()</td>            <td><%= request.server_software %></td></tr>
+  <tr><td>request.session_options=(options)()</td>  <td><%=  %></td></tr>
+  <tr><td>request.uuid()</td>                       <td><%= request.uuid %></td></tr>
+  <tr><td>request.xhr?()</td>                       <td><%= request.xhr? %></td></tr>
+  <tr><td>request.xml_http_request?()</td>          <td><%= request.xml_http_request? %></td></tr>
+</table>
+
+<h3>Request Environment</h3>
+<table border="1">
+  <% request.env.sort.each do |key, value| %>
+    <tr><td>request.env['<%=key %>']</td><td><%= value %></td>
+  <% end %>
+</table>

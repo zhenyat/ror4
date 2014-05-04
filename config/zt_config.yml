@@ -1,0 +1,65 @@
+################################################################################
+# zt_config.yml:
+#   Contains common config options for the Application
+#   (not needed to be stored in DB)
+#
+#   Source:   http://answerstop.org/question/93679/best-way-to-create-custom-config-options-for-my-rails-app
+#
+#   Loaded to ZT_CONFIG  in:  ./initializers/zt_load_config.rb
+#
+#   Add this file to .gitignore (?)
+#
+#   10.03.2014  ZT
+#   22.03.2014  Update (Mailer)
+#   05.04.2014  Update (Log file)
+################################################################################
+
+defaults: &defaults
+
+  companies:
+    Company1:
+      contacts:
+        adr:        Красная пл., 3
+        phone:      1234567
+        email:      rg@mail.ru
+      established:  1933
+      name:         Рога и копыта
+
+    Company2:
+      contacts:
+        adr:        Тверская, 9
+        phone:      09876543
+        email:      dp@gmail.com
+      established:  2013
+      name:         Дымок и провод
+
+  debug:
+    status:         false
+    path:           ''
+
+  mail:
+    path:           public/mail_attachments
+    bcc:            telyukov@mail.ru
+    from:           telyukov@gmail.com
+
+  pictures:
+    path:           public/images/pictures
+    size:
+    - 60.
+    -  0.
+
+development:
+  <<: *defaults
+
+  debug:
+    status:         true
+    path:           log/zt.log
+
+test:
+  <<: *defaults
+
+production:
+  <<: *defaults
+
+
+

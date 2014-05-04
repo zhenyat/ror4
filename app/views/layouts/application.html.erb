@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= page_title %></title>
+    <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
+    <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
+    <%= csrf_meta_tags %>
+  </head>
+  <body>
+    <header>
+      <%= favicon_link_tag  '/assets/ror.ico' %>
+      <%= link_to image_tag('/assets/ror.jpeg', alt: 'Ruby on Rails'), url_for(controller: :pages, action: :home) %>
+      <div id="switch"><%= language_switch %></div>
+      <h1><%= t :header_title %></h1>
+      <h2><%= t :hello %></h2>
+    </header>
+
+    <nav id="top">
+      <%= link_to (t :home_page),     "/#{I18n.locale}" %>
+      <%= link_to (t :dates_page),    "/#{I18n.locale}/dates" %>
+      <%= link_to (t :groups),        "/#{I18n.locale}/groups" %>
+      <%= link_to (t :debug_page),    "/#{I18n.locale}/debug" %>
+      <%= link_to (t :net_http),      "/#{I18n.locale}/net_http" %>
+      <%= link_to (t :pictures_page), "/#{I18n.locale}/pictures" %>
+      <%= link_to (t :init_page),     "/#{I18n.locale}/init" %>
+      <%= link_to (t :yaml_files),    "/#{I18n.locale}/yaml_files" %>
+      <%= link_to (t :superfish),     "/#{I18n.locale}/sf_sample" %>
+      <%= link_to (t :mailer),        "/#{I18n.locale}/zt_mailer" %>
+      <%= link_to (t :multi_form),    "/#{I18n.locale}/multi_form" %>
+      <%= link_to (t :sexi_tips),     "/#{I18n.locale}/sexi_tips" %>
+    </nav>
+
+    <%= yield %>
+
+    <footer>
+      <h3><%= t :versions %>:</h3>
+      <%= "#{RUBY_ENGINE}-#{RUBY_VERSION}-p#{RUBY_PATCHLEVEL} | Rails: #{Rails.version}" %><br>
+      <%= "Git Branch: #{GIT_BRANCH} | Commit: #{GIT_COMMIT} | #{t :created_at}: #{ zt_datetime(Time.at GIT_COMMIT_TIMESTAMP.to_i)}" %>
+
+    </footer>
+  </body>
+</html>

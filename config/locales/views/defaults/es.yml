@@ -1,0 +1,16 @@
+es:
+  back:         Atrás
+  created_at:   Creado
+  destroy:      Limpiar
+  edit:         Editar
+  filename:     Nombre del fichero
+  header_title: Anexo de Ruby on Rails 4
+  hello:        ¡Bienvenidos!
+  language:     Español
+  last:         Último
+  name:         Nombre
+  show:         Indicar
+  sure_message: ¿Está usted seguro?
+  title:        Título
+  versions:     Versións
+  upload_more:  Cargar más

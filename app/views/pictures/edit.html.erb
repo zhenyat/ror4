@@ -1,0 +1,31 @@
+<h1><%= t 'activerecord.handling.editing', model: @picture.class.model_name.human %></h1>
+
+<%= form_for(@picture, url: picture_path(id: @picture)) do |f| %>
+
+  <% if @picture.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@picture.errors.count, "error") %> prohibited this picture from being saved:</h2>
+      <ul>
+      <% @picture.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <p>
+    <%= f.label t(:filename) %>: <strong><%= @picture.filename %> </strong>
+  </p>
+
+  <p><%= f.hidden_field :id %></p>
+
+  <div class="field">
+    <%= f.label t(:title) %>: <%= f.text_field :title %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
+
+<%= link_to t(:show), picture_path(id: @picture) %> |
+<%= link_to t(:back), pictures_path %>

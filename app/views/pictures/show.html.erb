@@ -1,0 +1,28 @@
+<h1><%= t(@picture.class.model_name.human) %></h1>
+
+<p id="notice"><%= notice %></p>
+
+<td><%= image_tag "pictures/#{@picture.filename}" %></td>
+<p>
+  <strong><%= t :filename %>:</strong>
+  <%= @picture.filename %>
+</p>
+
+<p>
+  <strong><%= t :title %>:</strong>
+  <%= @picture.title %>
+</p>
+
+<p>
+  <strong><%= t :image_type %>:</strong>
+  <%= @image.mime_type.split('/').last %>
+</p>
+
+<p>
+  <strong><%= t :image_dimensions %>:</strong>
+  <%= "#{@image.columns} x #{@image.rows}" %>
+</p>
+
+<%= link_to t(:edit), edit_picture_url(id: @picture) %> |
+<%= link_to t(:back), pictures_path %>
+

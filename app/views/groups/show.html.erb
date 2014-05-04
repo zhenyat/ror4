@@ -1,0 +1,16 @@
+<h1><%= t(@group.class.model_name.human) %></h1>
+
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong><%= t :name %>:</strong>
+  <%= @group.name %>
+</p>
+
+<p>
+  <strong><%= t :title %>:</strong>
+  <%= @group.title %>
+</p>
+
+<%= link_to t(:edit), edit_group_url(id: @group) %> |
+<%= link_to t(:back), groups_path %>

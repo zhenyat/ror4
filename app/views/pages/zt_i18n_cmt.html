@@ -1,0 +1,94 @@
+<h1>ZT: I18n Implementation</h1>
+<section class="zt_comment">
+    <article>
+        <header>
+            <h3>Localization</h3>
+            <p><em>Regarding Rails Internationalization (I18n) API</em></p>
+        </header>
+        <p>The following issues to be investigated and implemented:</p>
+        <ul>
+            <li>
+                <strong>Multiple locales routing</strong><br>
+                Done following the <a href='http://dhampik.ru/blog/rails-routes-tricks-with-locales'> approach</a>
+            </li>
+          <li>
+              <strong>Date & Time localization</strong><br>
+              Done (see menu item 'Dates & Times')
+          </li>
+          <li>
+              <strong>Translation through structured yaml-files in config/locales</strong><br>
+              Done
+          </li>
+          <li>
+              <strong>A Model localization</strong><br>
+              Done for scaffold MVC (see menu item 'Groups')<br>
+              ! Workaround solution for: <pre>new / edit - _form.html.erb</pre>
+          </li>
+          <li>
+              <strong>A page content localization</strong><br>
+              Not done
+          </li>
+        </ul>
+    </article>
+
+    <article>
+        <header>
+            <h3>Routing issues</h3>
+            <p>
+                <em>Citation <a href='http://rusrails.ru/rails-internationalization-i18n-api'>from:</a></em><br>
+                <strong>"Касательно метода локализации: у этого решения есть один довольно большой недостаток"</strong>
+            </p>
+        </header>
+        <p>Благодаря применению "default_url_options", в  коде<p>
+        <pre>link_to 'Show' book</pre>
+        <p>нужно указывать опцию :id явно, как тут:</p>
+        <pre>link_to 'Show', book_url(:id => book)</pre>
+        <p>
+            Если это будет проблемой, обратите внимание на два плагина, упрощающих работу с маршрутами в этом случае:<br>
+            Sven Fuchs's <a href="https://github.com/svenfuchs/routing-filter/tree/master">routing_filter</a> и Raul Murciano's <a href="https://github.com/raul/translate_routes/tree/master"> translate_routes.</a>
+        </p>
+        <p>To fix the problem a lot of code in scaffold 'Group' was updated in:</p>
+        <pre>groups_controller.rb; all CRUD view files</pre>
+
+        <h4>As example:</h4>
+        <pre>app/views/groups/index.html.erb</pre>
+        <p>The following code: </p>
+        <pre>
+          link_to 'Show',    group
+          link_to 'Edit',    edit_group_path(group)
+          link_to 'Destroy', group, method: :delete, data: { confirm: 'Are you sure?' }
+        </pre>
+        <p> was replaced with:</p>
+        <pre>
+          link_to t(:show),    group_url(:id => group)
+          link_to t(:edit),    edit_group_url(:id => group)
+          link_to t(:destroy), group_url(:id => group), method: :delete, data: { confirm: t(:sure_message) }
+        </pre>
+    </article>
+
+    <article>
+        <header>
+          <h3>Ideas and Approaches</h3>
+          <p><em>What and how to do</em></p>
+        </header>
+        <p>Need to choose:<br>
+          <strong>"store multiple versions of content in the model and have one site" vs. "store only one version of content in the model but have multiple sites"</strong>
+        </p>
+        <p>
+          E.g. store several fields in a DB table:  <pre>     name_en | name_es | name_ru</pre>
+          and fetch the correct value:<br>
+          <pre>
+          def i18n_db_value(object, attribute)
+            object.send("#{attribute.to_s}_#{I18n.locale}") if object
+          end</pre>
+        </p>
+    </article>
+  </section>
+  <aside>
+      <h3>References:</h3>
+      <ul>
+        <li><a href="http://guides.rubyonrails.org/i18n.html#translations-for-active-record-models">Rails Internationalization (I18n) API</a></li>
+        <li><a href="http://rusrails.ru/rails-internationalization-i18n-api">API интернационализации Rails (I18n)</a></li>
+        <li><a href="http://railscasts.com/episodes/338-globalize3?view=asciicast">RailsCast about Globalize3</a></li>
+      </ul>
+  </aside>

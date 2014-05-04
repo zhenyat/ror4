@@ -1,0 +1,19 @@
+<h2>ZT Mailer</h2>
+<p><a href="http://guides.rubyonrails.org/action_mailer_basics.html">Source</a> <em>(and see comments in my_mailer.rb)</em></p>
+<h4>Email Data Input</h4>
+<section>
+  <%= form_for :my_mail, url: { controller: 'pages', action: 'send_msg' } do |f| %>
+    <p><%= f.label :name %>    <%= f.text_field :name,    value: 'Friend' %><p>
+    <p><%= f.label :email %>   <%= f.text_field :email,   value: 'evgt@mail.ru' %><p>
+    <p><%= f.label :subject %> <%= f.text_field :subject, value: 'Good luck from Ror4 Application', size: 30 %><p>
+
+    <p>
+      <strong>Attachments: </strong>
+      <%= f.check_box :jpeg_file,   {checked: true}, 'true', 'false' %><%= f.label :jpeg_file %>
+      <%= f.check_box :pdf_file,    {checked: true}, 'true', 'false' %><%= f.label :pdf_file %>
+      <%= f.check_box :ms_doc_file, {checked: true}, 'true', 'false' %><%= f.label :ms_doc_file %>
+    </p>
+
+    <p><%= f.submit 'Send'%></p>
+  <% end %>
+</section>

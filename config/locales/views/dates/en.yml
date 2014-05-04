@@ -1,0 +1,22 @@
+en:
+  dates_interval:   Dates Interval
+  defaults:         Defaults
+  default_date:     Default Date
+  default_datetime: Default DateTime
+  default_time:     Default Time
+  format:           Format
+  formatting:       Formatting Dates and Times
+  format_value:     "'locale' format value"
+  full_datetime:    Full Date and Time
+  locale_language:  English
+  locale_value:     Locale Value
+  localization:     Localization
+  long_date:        Long date
+  long_datetime:    Long DateTime
+  long_time:        Long Time
+  parameter:        Parameter
+  short_date:       Short Date
+  short_datetime:   Short DateTime
+  short_time:       Short Time
+  strftime_value:   "'strftime' Value"
+  value:            Value
