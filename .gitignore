@@ -25,3 +25,6 @@ config/database.yml
 # Ignore NetBeans files
 /script
 /nbproject/private
+
+# chruby
+/.ruby-version

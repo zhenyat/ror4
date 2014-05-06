@@ -23,8 +23,8 @@ ActiveRecord::Schema.define(version: 20140422075638) do
   add_index "categories", ["name"], name: "index_categories_on_name", unique: true, using: :btree
 
   create_table "groups", force: true do |t|
-    t.string   "name"
-    t.string   "title"
+    t.string   "name",       null: false
+    t.string   "title",      null: false
     t.datetime "created_at"
     t.datetime "updated_at"
   end

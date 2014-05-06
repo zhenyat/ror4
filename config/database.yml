@@ -13,8 +13,8 @@ development:
   encoding: utf8
   database: ror4_development
   pool: 5
-  username: root
-  password: 
+  username: ror
+  password: myRoR
   socket: /tmp/mysql.sock
 
 # Warning: The database defined as "test" will be erased and
@@ -25,8 +25,8 @@ test:
   encoding: utf8
   database: ror4_test
   pool: 5
-  username: root
-  password: 
+  username: ror
+  password: myRoR
   socket: /tmp/mysql.sock
 
 production:
