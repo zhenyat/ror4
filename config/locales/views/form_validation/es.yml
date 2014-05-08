@@ -1,0 +1,5 @@
+# Don't forget to concatenate "_page" to any page title
+es:
+  enter_title:  Enter title
+  title_length: Not more than 20 characters
+  

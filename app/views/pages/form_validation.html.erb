@@ -1,0 +1,19 @@
+<h1><%= t :form_validation_page %></h1>
+<p>HTML5 is applied</p>
+<%= form_for :my_form, url: {controller: "pages", action: "form_validation"}, html: {id: 'form_validation'} do |f| %>
+
+  <div class="field">
+    <%= f.label :title %>
+    <%= f.text_field :title, size: 20, placeholder: :enter_title, title: :title_length %>
+  </div>
+
+  <div class="field">
+    <%= f.label :password %>
+    <%=f.password_field :password, placeholder: :enter_password, size: 20 %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+
+<% end %>

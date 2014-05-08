@@ -2,7 +2,7 @@ class PagesController < ApplicationController
   include Zt
 
   before_action :set_locale
-  before_action :zt_log  if ZT_DEBUG == true  # to monitor which actions used
+  before_action :zt_log  if ZT_DEBUG == true  # to monitor which action is used
 
   def dates
     @time       = Time.now
@@ -21,6 +21,10 @@ class PagesController < ApplicationController
     @page_title = :home_page
   end
 
+  def form_validation
+    @page_title = "#{params[:action]}"
+  end
+  
   def init
     @page_title = :init_page
   end
@@ -34,7 +38,7 @@ class PagesController < ApplicationController
   end
 
   def sf_sample
-    @page_title = :sf_sample
+    @page_title = :sf_sample_page
     @sections   = Section.all
     @categories = Category.all
     @products   = Product.all

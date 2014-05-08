@@ -1,0 +1,5 @@
+# Don't forget to concatenate "_page" to any page title
+ru:
+  enter_title:  Введите заголовок
+  title_length: Не более 20 букв
+  

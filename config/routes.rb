@@ -10,20 +10,21 @@ Ror4::Application.routes.draw do
     resources :categories
     resources :sections
 
-    post 'upload',       to: 'pictures', as: :upload
+    post 'upload',          to: 'pictures', as: :upload
 
-    get  'dates',        to: 'pages',    as: :dates
-    get  'debug',        to: 'pages',    as: :debug
-    get  'init',         to: 'pages',    as: :init
-    get  'multi_form',   to: 'pages',    as: :multi_form
-    get  'net_http',     to: 'pages',    as: :net_http
-    post 'send_msg',     to: 'pages',    as: :send_msg
-    get  'sf_sample',    to: 'pages',    as: :sf_page
-    get  'sexi_tips',    to: 'pages',    as: :sexi_tips
-    post 'show_year',    to: 'pages',    as: :show_year
-    post 'update_year',  to: 'pages',    as: :update_year
-    get  'yaml_files',   to: 'pages',    as: :yaml_file
-    get  'zt_mailer',    to: 'pages',    as: :zt_mailer
+    get  'dates',           to: 'pages',    as: :dates
+    get  'debug',           to: 'pages',    as: :debug
+    get  'init',            to: 'pages',    as: :init
+    get  'form_validation', to: 'pages',    as: :form_validation
+    get  'multi_form',      to: 'pages',    as: :multi_form
+    get  'net_http',        to: 'pages',    as: :net_http
+    post 'send_msg',        to: 'pages',    as: :send_msg
+    get  'sf_sample',       to: 'pages',    as: :sf_page
+    get  'sexi_tips',       to: 'pages',    as: :sexi_tips
+    post 'show_year',       to: 'pages',    as: :show_year
+    post 'update_year',     to: 'pages',    as: :update_year
+    get  'yaml_files',      to: 'pages',    as: :yaml_file
+    get  'zt_mailer',       to: 'pages',    as: :zt_mailer
 
     # ZT Comments
     get 'zt_group_cmt', to: 'pages',    as: :zt_group_cmt
