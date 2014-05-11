@@ -16,6 +16,7 @@ Ror4::Application.routes.draw do
     get  'debug',           to: 'pages',    as: :debug
     get  'init',            to: 'pages',    as: :init
     get  'form_validation', to: 'pages',    as: :form_validation
+    post 'form_validation', to: 'pages'
     get  'multi_form',      to: 'pages',    as: :multi_form
     get  'net_http',        to: 'pages',    as: :net_http
     post 'send_msg',        to: 'pages',    as: :send_msg

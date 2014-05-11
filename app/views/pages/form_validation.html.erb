@@ -1,19 +1,63 @@
 <h1><%= t :form_validation_page %></h1>
-<p>HTML5 is applied</p>
+<p>For attribute <strong>pattern</strong> see <a href="http://html5pattern.com/">Reference</a></p>
+<p><strong>Russian phone</strong> number see <a href="http://www.etl-tools.com/regular-expressions/is-russian-phone-number.html">here</a></p>
+<br>
+<p>According to my tests the attribute <strong>pattern</strong> is supported by:</p>
+<ul>
+  <li>Chrom 34.0.1847.131 / OS X Mavericks / Windows 7</li>
+  <li>Firefox 23.0.1 / OS X Mavericks </li>
+</ul>
+<p>The attribute <strong>pattern</strong> is NOT supported by:</p>
+<ul>
+  <li>IE 9.0 / Windows 7</li>
+  <li>Safari 7.0.3 (9537.75.14) / OS X Mavericks </li>
+  <li>Safari 7.0 / iOS 7.1.1 </li>
+</ul>
+<br>
 <%= form_for :my_form, url: {controller: "pages", action: "form_validation"}, html: {id: 'form_validation'} do |f| %>
 
-  <div class="field">
-    <%= f.label :title %>
-    <%= f.text_field :title, size: 20, placeholder: :enter_title, title: :title_length %>
-  </div>
+  <table>
+    <h3>Rails Form Helper is applied</h3>
+    <tr>
+      <td><%= f.label :name %></td>
+      <td><%= f.text_field :title, placeholder: 'Введите имя', title: 'Имя любое' %></td>
+      <td>&lt;%= f.text_field :title, placeholder: 'Введите имя', title: 'Имя любое' %&gt;</td>
+    </tr>
+    <tr>
+      <td><%= f.label :password %></td>
+      <td><%= f.password_field :password, placeholder: 'Введите пароль', title: 'Пароль любой' %></td>
+      <td>&lt;%= f.password_field :password, placeholder: 'Введите пароль', title: 'Пароль любой' %&gt;</td>
+    </tr>
+    <tr>
+      <td><%= f.label :email %></td>
+      <td><%=  f.email_field 'user', placeholder: 'Введите адрес', title: 'Email address', pattern: '^(|(([A-Za-z0-9]+_+)|([A-Za-z0-9]+\-+)|([A-Za-z0-9]+\.+)|([A-Za-z0-9]+\++)
+)*[A-Za-z0-9]+@((\w+\-+)|(\w+\.))*\w{1,63}\.[a-zA-Z]{2,6})$', required: true %></td>
+      <td>&lt;%= f.email_field 'user', placeholder: 'Введите адрес', title: 'Email address', pattern: '...', required: true %&gt;</td>
+    </tr>
+    <tr>
+      <td><%= f.label :phone %></td>
+      <td><%=  f.phone_field 'user', placeholder: 'Введите номер', title: 'Российский номер', pattern: '((8|\+7)-?)?\(?\d{3}\)?-?\d{1}-?\d{1}-?\d{1}-?\d{1}-?\d{1}-?\d{1}-?\d{1}', required: true %></td>
+      <td>&lt;%= f.phone_field 'user', placeholder: 'Введите номер', title: 'Российский номер', pattern: '...', required: true %&gt;</td>
+    </tr>
+  </table>
 
-  <div class="field">
-    <%= f.label :password %>
-    <%=f.password_field :password, placeholder: :enter_password, size: 20 %>
-  </div>
+  <h3>Pure HTML5 is applied</h3>
+  <table>
+    <tr>
+      <td><lebel>Email: </lebel></td>
+      <td><input type="email" placeholder="Введите адрес" title="Email address" size="20" pattern='^(|(([A-Za-z0-9]+_+)|([A-Za-z0-9]+\-+)|([A-Za-z0-9]+\.+)|([A-Za-z0-9]+\++)
+   )*[A-Za-z0-9]+@((\w+\-+)|(\w+\.))*\w{1,63}\.[a-zA-Z]{2,6})$' required ></td>
+      <td>&lt;input type="email" placeholder="Введите адрес" title="Email address" pattern="..." required&gt;</td>
+     </tr>
 
+      <tr>
+      <td><lebel>Телефон: </lebel></td>
+      <td><input type="tel" placeholder="Введите номер" title="Российский номер" pattern="((8|\+7)-?)?\(?\d{3}\)?-?\d{1}-?\d{1}-?\d{1}-?\d{1}-?\d{1}-?\d{1}-?\d{1}" required ></td>
+      <td>&lt;input type="tel" placeholder="Введите номер" title="Российский номер" pattern="..." required&gt;</td>
+    </tr>
+  </table>
   <div class="actions">
-    <%= f.submit %>
+    <%= f.submit 'Сохранить'%>
   </div>
 
 <% end %>

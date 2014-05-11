@@ -24,7 +24,7 @@ class PagesController < ApplicationController
   def form_validation
     @page_title = "#{params[:action]}"
   end
-  
+
   def init
     @page_title = :init_page
   end
