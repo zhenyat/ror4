@@ -35,6 +35,7 @@ class PagesController < ApplicationController
 
   def net_http
     @page_title = :net_http_page
+    zt_log params
   end
 
   def sf_sample
