@@ -35,7 +35,16 @@ class PagesController < ApplicationController
 
   def net_http
     @page_title = :net_http_page
-    zt_log params
+    if session['HTTP_REFERER'].nil? && session['ip'].nil?
+      session['HTTP_REFERER'] = request.env['HTTP_REFERER'].nil? ? nil : request.env['HTTP_REFERER']
+      session['ip']           = request.ip.nil?                  ? nil : request.ip
+      session['utm_source']   = params['utm_source'].nil?        ? nil : params['utm_source']
+      session['utm_medium']   = params['utm_medium'].nil?        ? nil : params['utm_medium']
+      session['utm_term']     = params['utm_term'].nil?          ? nil : params['utm_term']
+      session['utm_content']  = params['utm_content'].nil?       ? nil : params['utm_content']
+      session['utm_campaign'] = params['utm_campaign'].nil?      ? nil : params['utm_campaign']
+    end
+    zt_log session['HTTP_REFERER'], session['ip'], session['ip'], session['utm_medium'], session['utm_term'], session['utm_content'], session['utm_campaign']
   end
 
   def sf_sample

@@ -18,7 +18,7 @@ module Zt
       # Writes all arguments to ...
       args.each_with_index do |arg, index|
         file_log.puts "arg[#{index}]: #{arg.inspect}"  # ... zt.log
-#       puts "arg[#{index}]: #{arg.inspect}"           # ... console
+        puts "arg[#{index}]: #{arg.inspect}"           # ... console
 #       logger.debug "arg[#{index}]: #{arg.inspect}"   # ... console & development.log
       end
       file_log.close                                   #Closes file
