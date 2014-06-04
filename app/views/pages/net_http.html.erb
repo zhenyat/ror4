@@ -50,9 +50,7 @@
 <h3>Request Environment</h3>
 <table border="1">
   <% if request.env['HTTP_REFERER'].nil? %>
-    <tr class="no"><td>request.env['HTTP_REFERER']</td><td><strong>NIL</strong></td></tr>
-  <% else %>
-    <tr class="yes"><td>request.env['HTTP_REFERER']</td><td><strong><%= request.env['HTTP_REFERER'] %></strong></td></tr>
+    <tr><td>request.env['HTTP_REFERER']</td><td class="alert"><strong>NULL</strong></td></tr>
   <% end %>
 
   <% request.env.sort.each do |key, value| %>

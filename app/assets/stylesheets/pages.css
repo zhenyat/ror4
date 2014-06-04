@@ -47,5 +47,6 @@ and open the template in the editor.
 
 a.tooltip {color: maroon}
 
-.yes {color: green;}
-.no  {color: red;}
+.alert {
+    color: red;
+}
