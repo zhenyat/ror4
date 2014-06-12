@@ -50,3 +50,9 @@ a.tooltip {color: maroon}
 .alert {
     color: red;
 }
+
+.top_menu {
+    margin-top: 10px ;
+    margin-left: 300px;
+    color: red;
+}

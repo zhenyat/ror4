@@ -35,5 +35,5 @@ production:
   database: ror4_production
   pool: 5
   username: root
-  password:
+  password: sql
   socket: /tmp/mysql.sock
