@@ -1,4 +1,4 @@
-class PicturesController < ApplicationController
+class PicturesController < ApplicationController  
   before_action :set_picture, only: [:show, :edit, :update, :destroy]
   before_filter :set_locale     #ZT
 
@@ -55,6 +55,12 @@ class PicturesController < ApplicationController
       original_filename = uploaded_io.original_filename
       File.open("#{Rails.root}/#{ZT_CONFIG['pictures']['path']}/#{original_filename}", 'wb').write(uploaded_io.read)
       Picture.create(filename: original_filename, title: params[:picture][:title])
+      
+      path = "#{Rails.root}/#{ZT_CONFIG['pictures']['path']}"
+      file = "#{path}/#{original_filename}"
+      new_file = "#{path}/thumb_#{original_filename}"
+      cmd = "convert #{file} -resize '100' #{new_file}"
+      system(cmd)
     else
       render new_picture_path
     end
