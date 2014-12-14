@@ -1,5 +1,10 @@
 <h2>ZT Mailer</h2>
 <p><a href="http://guides.rubyonrails.org/action_mailer_basics.html">Source</a> <em>(and see comments in my_mailer.rb)</em></p>
+
+<% if flash[:notice] -%>
+  <p class='notice' ><%=h flash[:notice] %></p>
+<% end -%>
+
 <h4>Email Data Input</h4>
 <section>
   <%= form_for :my_mail, url: { controller: 'pages', action: 'send_msg' } do |f| %>

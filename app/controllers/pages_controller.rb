@@ -1,5 +1,5 @@
 class PagesController < ApplicationController
-  include Zt
+  include ZT
 
   before_action :set_locale
   before_action :zt_log  if ZT_DEBUG == true  # to monitor which action is used
@@ -66,8 +66,9 @@ class PagesController < ApplicationController
                          params[:my_mail][:email],
                          params[:my_mail][:subject],
                          files).deliver
-
-    render nothing: true
+    flash[:notice] = 'Message sent successfully'
+#    render nothing: true
+    redirect_to :back
   end
 
   # Source:  http://sixrevisions.com/css/css-only-tooltips/

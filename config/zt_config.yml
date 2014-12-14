@@ -40,7 +40,7 @@ defaults: &defaults
   mail:
     path:           public/mail_attachments
     bcc:            telyukov@mail.ru
-    from:           telyukov@gmail.com
+    from:           bkctst@gmail.com
 
   pictures:
     path:           public/images/pictures

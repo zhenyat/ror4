@@ -1,0 +1,15 @@
+<h2>Delayed Notification</h2>
+<h3>Let's send the last Fortune message</h3>
+
+<% if flash[:notice] -%>
+  <p class='notice' ><%=h flash[:notice] %></p>
+<% end -%>
+
+<section>
+  <%= form_for :notification, url: { controller: 'messages', action: 'notification' } do |f| %>
+    <p><%= f.label :subject %> <%= f.text_field :subject, value: 'Delayed Notification', size: 30 %><p>
+    <%= f.check_box :delay, {checked: true}, 'true', 'false' %><%= f.label " Поставить в очередь" %>
+    <p><%= f.submit 'Send'%></p>
+  <% end %>
+</section>
+

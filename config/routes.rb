@@ -17,8 +17,12 @@ Ror4::Application.routes.draw do
     get  'init',            to: 'pages',    as: :init
     get  'form_validation', to: 'pages',    as: :form_validation
     post 'form_validation', to: 'pages'
+    get  'messages/index'
+    get  'notification',    to: 'messages', as: :notification
+    post 'notification',    to: 'messages'
     get  'multi_form',      to: 'pages',    as: :multi_form
     get  'net_http',        to: 'pages',    as: :net_http
+#    post 'notification',    to: 'messages', as: :notification
     post 'send_msg',        to: 'pages',    as: :send_msg
     get  'sf_sample',       to: 'pages',    as: :sf_page
     get  'sexi_tips',       to: 'pages',    as: :sexi_tips

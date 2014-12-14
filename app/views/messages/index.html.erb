@@ -1,0 +1,7 @@
+<h1>Delayed Messages</h1>
+<p>Don't forget to run a command:  <strong>rake jobs:work</strong></p>
+<p><a href="http://runnable.com/Ur2lvBES_vRUAAOA/how-to-schedule-background-jobs-at-future-time-with-delayedjob-for-ruby-on-rails-and-delayed_job">Source</a></p>
+<h2>Collected Messages: <%= "#{@bottom.count}" %></h2>
+<% @bottom.each do |message| %>
+  <p><%= message.text %> </p>
+<% end %>

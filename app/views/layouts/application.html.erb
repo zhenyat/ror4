@@ -29,6 +29,8 @@
       <%= link_to (t :multi_form),        "/#{I18n.locale}/multi_form" %>
       <%= link_to (t :sexi_tips),         "/#{I18n.locale}/sexi_tips" %>
       <%= link_to (t :form_validation),   "/#{I18n.locale}/form_validation" %>
+      <%= link_to (t :delayed_messages),  "/#{I18n.locale}/messages/index" %>
+      <%= link_to (t :notification),      "/#{I18n.locale}/notification" %>
     </nav>
 
     <%= yield %>
@@ -36,8 +38,9 @@
     <footer>
       <h3><%= t :versions %>:</h3>
       <%= "#{RUBY_ENGINE}-#{RUBY_VERSION}-p#{RUBY_PATCHLEVEL} | Rails: #{Rails.version}" %><br>
-      <%= "Git Branch: #{GIT_BRANCH} | Commit: #{GIT_COMMIT} | #{t :created_at}: #{ zt_datetime(Time.at GIT_COMMIT_TIMESTAMP.to_i)}" %>
-
+      <%# Different formats of GIT_COMMIT_TIMESTAMP: %>
+      <%= "Git Branch: #{GIT_BRANCH} | Commit: #{GIT_COMMIT} | #{t :created_at}: #{l GIT_COMMIT_TIMESTAMP, format: '%d %B %Y %H:%M'}" %>
+      <%#= "Git Branch: #{GIT_BRANCH} | Commit: #{GIT_COMMIT} | #{t :created_at}: #{zt_datetime GIT_COMMIT_TIMESTAMP, 'long'}" %>
     </footer>
   </body>
 </html>

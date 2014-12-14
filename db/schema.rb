@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140422075638) do
+ActiveRecord::Schema.define(version: 20141213105054) do
 
   create_table "categories", force: true do |t|
     t.integer  "section_id"
@@ -22,9 +22,25 @@ ActiveRecord::Schema.define(version: 20140422075638) do
 
   add_index "categories", ["name"], name: "index_categories_on_name", unique: true, using: :btree
 
+  create_table "delayed_jobs", force: true do |t|
+    t.integer  "priority",   default: 0, null: false
+    t.integer  "attempts",   default: 0, null: false
+    t.text     "handler",                null: false
+    t.text     "last_error"
+    t.datetime "run_at"
+    t.datetime "locked_at"
+    t.datetime "failed_at"
+    t.string   "locked_by"
+    t.string   "queue"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "delayed_jobs", ["priority", "run_at"], name: "delayed_jobs_priority", using: :btree
+
   create_table "groups", force: true do |t|
-    t.string   "name",       null: false
-    t.string   "title",      null: false
+    t.string   "name"
+    t.string   "title"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -35,6 +51,12 @@ ActiveRecord::Schema.define(version: 20140422075638) do
     t.string   "name"
     t.string   "title"
     t.string   "description"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "messages", force: true do |t|
+    t.text     "text"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

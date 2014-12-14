@@ -23,8 +23,8 @@ Ror4::Application.configure do
       port:  587,
       domain: 'gmail.com' ,
       authentication: 'plain' ,
-      user_name: 'telyukov@gmail.com',
-      password: 'MyGmail-Z-1950',
+      user_name: 'bkctst@gmail.com',
+      password: 'BKC-2014',
       enable_starttls_auto: true
   }
   # ====

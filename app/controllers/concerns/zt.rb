@@ -1,4 +1,4 @@
-module Zt
+module ZT
   extend ActiveSupport::Concerns
 
   ##############################################################################
