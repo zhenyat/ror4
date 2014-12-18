@@ -22,4 +22,5 @@ ru:
   short_datetime:   Краткие дата и время
   short_time:       Краткое время
   strftime_value:   "'strftime' значение"
+  time_zones:       Временные зоны
   value:            Значение

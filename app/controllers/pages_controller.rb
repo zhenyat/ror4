@@ -1,3 +1,6 @@
+################################################################################
+# 18.12.2014  Last update  Correct work with Time
+################################################################################
 class PagesController < ApplicationController
   include ZT
 
@@ -5,8 +8,13 @@ class PagesController < ApplicationController
   before_action :zt_log  if ZT_DEBUG == true  # to monitor which action is used
 
   def dates
-    @time       = Time.now
-    @page_title = :dates_page
+    @current_time             = Time.current
+    @current_time_utc         = @current_time.utc
+    @current_time_utc_iso8601 = @current_time.utc.iso8601
+
+    @time_zone_now            = Time.zone.now       # the same as Time.current_time
+    @time_now                 = Time.now            # System time - don't use it!
+    @page_title               = :dates_page
   end
 
   def debug

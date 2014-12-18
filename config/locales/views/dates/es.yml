@@ -21,4 +21,5 @@ es:
   short_time:       Hora abreviada
   short_datetime:   FechaHora abreviada
   strftime_value:   Valor 'strftime'
+  time_zones:       Zonas horarias
   value:            Valor
