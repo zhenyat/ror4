@@ -66,10 +66,11 @@ class PagesController < ApplicationController
   def send_msg
     # Files to be attached
     files = []
-    files << 'facebook.jpg'  if params[:my_mail][:jpeg_file]   == 'true'
-    files << 'pmt.pdf'       if params[:my_mail][:pdf_file]    == 'true'
-    files << 'квитанция.doc' if params[:my_mail][:ms_doc_file] == 'true'
-
+    files << 'facebook.jpg'         if params[:my_mail][:jpeg_file]   == 'true'
+    files << 'pmt.pdf'              if params[:my_mail][:pdf_file]    == 'true'
+    files << 'квитанция.doc'        if params[:my_mail][:ms_doc_file] == 'true'
+    files << 'Documents NOT YLE.7z' if params[:my_mail][:zip_file] == 'true'
+    
     MyMailer.hello_email(params[:my_mail][:name],
                          params[:my_mail][:email],
                          params[:my_mail][:subject],

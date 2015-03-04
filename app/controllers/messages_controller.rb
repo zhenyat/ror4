@@ -10,6 +10,13 @@
 class MessagesController < ApplicationController
   include ZT
 
+  # kicks off the delivery procedure
+  def deliver  
+    Delayed::Job.enqueue(MessageJob.new(params[:id]))  
+    flash[:notice] = "Message is being delivered."  
+    redirect_to messages_index  
+  end
+
   # Displays all collected Fortune messages
   def index
 #    if request.post?
