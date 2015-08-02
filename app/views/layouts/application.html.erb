@@ -8,8 +8,8 @@
   </head>
   <body>
     <header>
-      <%= favicon_link_tag  '/assets/ror.ico' %>
-      <%= link_to image_tag('/assets/ror.jpeg', alt: 'Ruby on Rails'), url_for(controller: :pages, action: :home) %>
+      <%= favicon_link_tag  'ror.ico' %>
+      <%= link_to image_tag('ror.jpeg', alt: 'Ruby on Rails'), url_for(controller: :pages, action: :home) %>
       <div id="switch"><%= language_switch %></div>
       <h1><%= t :header_title %></h1>
       <h2><%= t :hello %></h2>
@@ -31,6 +31,8 @@
       <%= link_to (t :form_validation),   "/#{I18n.locale}/form_validation" %>
       <%= link_to (t :delayed_messages),  "/#{I18n.locale}/messages/index" %>
       <%= link_to (t :notification),      "/#{I18n.locale}/notification" %>
+      <%= link_to (t :articles),          "/#{I18n.locale}/articles" %>
+      <%= link_to (t :contents),          "/#{I18n.locale}/contents" %>
     </nav>
 
     <%= yield %>

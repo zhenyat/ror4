@@ -11,7 +11,16 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141213105054) do
+ActiveRecord::Schema.define(version: 20150722191636) do
+
+  create_table "articles", force: true do |t|
+    t.string   "authors"
+    t.string   "title"
+    t.date     "issue_date"
+    t.string   "url"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "categories", force: true do |t|
     t.integer  "section_id"
@@ -21,6 +30,15 @@ ActiveRecord::Schema.define(version: 20141213105054) do
   end
 
   add_index "categories", ["name"], name: "index_categories_on_name", unique: true, using: :btree
+
+  create_table "contents", force: true do |t|
+    t.integer  "article_id"
+    t.text     "doc",        limit: 2147483647
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "contents", ["article_id"], name: "index_contents_on_article_id", using: :btree
 
   create_table "delayed_jobs", force: true do |t|
     t.integer  "priority",   default: 0, null: false
@@ -39,8 +57,8 @@ ActiveRecord::Schema.define(version: 20141213105054) do
   add_index "delayed_jobs", ["priority", "run_at"], name: "delayed_jobs_priority", using: :btree
 
   create_table "groups", force: true do |t|
-    t.string   "name",       null: false
-    t.string   "title",      null: false
+    t.string   "name"
+    t.string   "title"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

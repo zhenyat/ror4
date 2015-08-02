@@ -7,6 +7,10 @@ class PagesController < ApplicationController
   before_action :set_locale
   before_action :zt_log  if ZT_DEBUG == true  # to monitor which action is used
 
+  def articles
+
+  end
+
   def dates
     @current_time             = Time.current
     @current_time_utc         = @current_time.utc
@@ -70,7 +74,7 @@ class PagesController < ApplicationController
     files << 'pmt.pdf'              if params[:my_mail][:pdf_file]    == 'true'
     files << 'квитанция.doc'        if params[:my_mail][:ms_doc_file] == 'true'
     files << 'Documents NOT YLE.7z' if params[:my_mail][:zip_file] == 'true'
-    
+
     MyMailer.hello_email(params[:my_mail][:name],
                          params[:my_mail][:email],
                          params[:my_mail][:subject],

@@ -9,6 +9,8 @@ Ror4::Application.routes.draw do
     resources :products
     resources :categories
     resources :sections
+    resources :articles
+    resources :contents
 
     post 'upload',          to: 'pictures', as: :upload
 

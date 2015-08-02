@@ -1,0 +1,30 @@
+<h1>Listing articles</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Authors</th>
+      <th>Title</th>
+      <th>Issue date</th>
+      <th>Url</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @articles.each do |article| %>
+      <tr>
+        <td><%= article.authors %></td>
+        <td><%= article.title %></td>
+        <td><%= article.issue_date %></td>
+        <td><%= article.url %></td>
+        <td><%= link_to image_tag('buttons/show.png',   alt: 'show',    title: t(:show)),    article_url(id: article) %></td>
+        <td><%= link_to image_tag('buttons/edit.png',   alt: 'edit',    title: t(:edit)),    edit_article_url(id: article) %></td>
+        <td><%= link_to image_tag('buttons/delete.png', alt: 'destroy', title: t(:destroy)), article_url(id: article), method: :delete, data: {confirm: t(:sure_message)} %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+<%= link_to t(:new_article), new_article_path %>
