@@ -144,3 +144,6 @@ DEPENDENCIES
   sdoc
   turbolinks
   uglifier (~> 2.5.3)
+
+BUNDLED WITH
+   1.10.3

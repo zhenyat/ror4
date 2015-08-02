@@ -3,8 +3,15 @@
   </style>
 </head>
 <body>
-    <h1>Examples of CSS ToolTips!</h1>
-    <p>Here are some examples of a <a class="tooltip" href="#">Classic<span class="classic">This is just an example of what you can do using a CSS tooltip, feel free to get creative and produce your own!</span></a>, <a class="tooltip" href="#">Critical<span class="custom critical"><img src='<%= "#{Rails.root}/app/assets/images/sexi_tips/Critical.png" %>' alt="Error" height="48" width="48" /><em>Critical</em>This is just an example of what you can do using a CSS tooltip, feel free to get creative and produce your own!</span></a>, <a class="tooltip" href="#">Help<span class="custom help"><img src="Help.png" alt="Help" height="48" width="48" /><em>Help</em>This is just an example of what you can do using a CSS tooltip, feel free to get creative and produce your own!</span></a>, <a class="tooltip" href="#">Information<span class="custom info"><img src="Info.png" alt="Information" height="48" width="48" /><em>Information</em>This is just an example of what you can do using a CSS tooltip, feel free to get creative and produce your own!</span></a> and <a class="tooltip" href="#">Warning<span class="custom warning"><img src="Warning.png" alt="Warning" height="48" width="48" /><em>Warning</em>This is just an example of what you can do using a CSS tooltip, feel free to get creative and produce your own!</span></a> CSS powered tooltip. This is just an example of what you can do so feel free to get creative and produce your own!</p>
+    <h1>Examples of CSS ToolTips</h1>
+    <h4>(see source <a href='http://sixrevisions.com/css/css-only-tooltips/'> here </a>)</h4>
+    <% tip_text = 'This is just an example of what you can do using a CSS tooltip, feel free to get creative and produce your own!' %>
+    <p>Here are some examples of a <a class="tooltip" href="#">Classic<span class="classic"><%= tip_text %></span></a>, 
+      <a class="tooltip" href="#">Critical<span class="custom critical"><%= image_tag("sexi_tips/Critical.png", alt: "Error", size: "48x48") %><em>Critical</em><%= tip_text %></span></a>, 
+      <a class="tooltip" href="#">Help<span class="custom help"><%= image_tag("sexi_tips/Help.png", alt: "Help", size: "48x48") %><em>Help</em><%= tip_text %></span></a>, 
+      <a class="tooltip" href="#">Information<span class="custom info"><%= image_tag("sexi_tips/Info.png", alt: "Info", size: "48x48") %><em>Information</em><%= tip_text %></span></a> and 
+      <a class="tooltip" href="#">Warning<span class="custom warning"><%= image_tag("sexi_tips/Warning.png", alt: "Warning", size: "48x48") %><em>Warning</em><%= tip_text %></span></a> 
+      CSS powered tooltip. This is just an example of what you can do so feel free to get creative and produce your own!</p>
 
     <% @items.each do |item| %>
       <p>
@@ -18,7 +25,6 @@
         <% end %>
       </p>
     <% end %>
-
     <h2>Table cell as a Reference with a Tip</h2>
     <h4>(see source <a href= "http://takprostotak.ru/vebrazrabotchiku/html-v-primerax/ssylki-v-tablicax-html.html"> here</a>)</h4>
     <table border='1'>
